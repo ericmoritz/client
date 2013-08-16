@@ -1,8 +1,7 @@
 from client.http.requests_client import get, content
 from client.content_types import json
 from client.template import template
-from client.compose import composable
-from client.spec import specdoc, name, spec
+from client.spec import specdoc, name
 from client.debug import trace
 from pprint import pprint
 
