@@ -6,7 +6,6 @@ from client.debug import trace
 from pprint import pprint
 
 
-
 get_page = name("get_page")(
     json + 
     content + 
