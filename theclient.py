@@ -9,11 +9,14 @@ from pprint import pprint
 
 
 get_page = name("get_page")(
-    trace("data: ") + json + content + get() + trace("url:") + template("http://httpbin.org/get{?slug,page}",
-                                                      required=("slug", ))
+    json + 
+    content + 
+    get() + 
+    trace("url:") + 
+    template("http://httpbin.org/get{?slug,page}", required=("slug", ))
 )
 
 
 print specdoc(get_page)
-get_page(slug="ericmoritz")
-get_page(slug="ericmoritz", page=1)
+pprint(get_page(slug="ericmoritz"))
+pprint(get_page(slug="ericmoritz", page=1))
