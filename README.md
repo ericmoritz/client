@@ -39,7 +39,7 @@ Returns a simulated restful call
 >>>
 ```
 
-You will notice that get_page says it returns a `dict | list | number | string | None`.  
+You will notice that `get_page` says it returns a `dict | list | number | string | None`.  
 
 This is the return type of the `client.content_types.json` function.  `client` provides a rudimentary type 
 documentation system which `compose` and `compose_all` to automatically document the type documentation.
