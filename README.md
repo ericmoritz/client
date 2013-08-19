@@ -28,8 +28,8 @@ get_page = autodoc(
 Usage
 ~~~~~~~
 
-```Python traceback
 
+```
 >>> get_page(slug="test")
 url: u'http://httpbin.org/get?slug=test'
 {u'url': u'http://httpbin.org/get?slug=test', u'headers': {u'Connection': u'close', u'Host': u'httpbin.org', u'Accept-Encoding': u'gzip, deflate, compress', u'Accept': u'*/*', u'User-Agent': u'python-requests/1.2.3 CPython/2.7.1 Darwin/11.4.2'}, u'args': {u'slug': u'test'}, u'origin': u'159.54.131.7'}
