@@ -24,7 +24,9 @@ get_page = autodoc(
     doc="Returns a simulated restful call"
 )
 ```
-Usage:
+
+Usage
+~~~~~~~
 
 ```python
 >>> get_page(slug="test")
