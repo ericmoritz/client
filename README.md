@@ -28,6 +28,7 @@ get_page = autodoc(
 Usage
 ~~~~~~~
 
+Here's what happens:
 
 ```python
  >>> get_page(slug="test")
