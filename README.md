@@ -28,7 +28,7 @@ get_page = autodoc(
 Usage
 ~~~~~~~
 
-```python
+```Python traceback
 
 >>> get_page(slug="test")
 url: u'http://httpbin.org/get?slug=test'
