@@ -1,11 +1,10 @@
-client
-======
+# client
+
 
 experimental rest client with the goal of enabling composable stateless and self documenting RESTful clients.
 
 
-Example
----------
+## Example
 
 
 ```python 
@@ -25,10 +24,7 @@ get_page = autodoc(
 )
 ```
 
-Usage
-~~~~~~~
-
-Here's what happens:
+### Usage:
 
 ```python
  >>> get_page(slug="test")
