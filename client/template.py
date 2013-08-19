@@ -1,4 +1,3 @@
-from client.compose import composable
 from client.spec import spec
 from purl import Template
 from purl import template as ptemplate
@@ -6,7 +5,6 @@ from purl import template as ptemplate
 ##====================================================================
 ## Public
 ##====================================================================
-@composable
 @spec('string', 'string')
 def template(tpl_str, required=None):
     """Creates a uri_template function"""

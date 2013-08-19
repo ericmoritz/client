@@ -11,6 +11,19 @@ def spec(*arg_types, **kwarg_types):
     return dec
 
 
+@spec("function", "function")
+def autodoc(f, name=None, doc=None):
+    if name is not None:
+        f.__name__ = name
+
+    if doc is not None:
+        f.__doc__ = doc
+
+    head = specdoc(f)
+    f.__doc__ = "\n".join([head, "", f.__doc__ or ""])
+    return f
+
+
 @spec("function", "(tuple, dict) | None")
 def get_spec(f):
     return getattr(f, "_spec", None)

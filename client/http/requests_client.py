@@ -1,4 +1,3 @@
-from client.compose import composable
 from client.spec import spec, raises, name
 import requests
 
@@ -11,7 +10,6 @@ class HTTPError(Exception):
         return "<HTTPError {0!r}>".format(self.resp)
 
 def request_fun(method, **kwargs):
-    @composable
     @raises('HttpError')
     @name("requests." + method)
     @spec('url', 'requests.Response')
@@ -25,7 +23,6 @@ def request_fun(method, **kwargs):
     return request
 
 
-@composable
 @name("requests.content")
 @spec('requests.Response', 'string')
 def content(resp):

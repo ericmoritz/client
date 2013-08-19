@@ -5,13 +5,6 @@ from client.spec import (
 ## Public
 ##====================================================================
 
-def composable(f):
-    return Composable(f)
-
-
-##====================================================================
-## Internal
-##====================================================================
 def compose(f, g):
     def inner(*args, **kwargs):
         return f(g(*args, **kwargs))
@@ -21,6 +14,15 @@ def compose(f, g):
     validate_composition(f, g)
     inner.__name__ = "{1}+{0}".format(f.__name__, g.__name__)
     return inner
+
+
+def compose_all(*args):
+    return reduce(compose, args)
+
+
+##====================================================================
+## Internal
+##====================================================================
 
 
 def validate_composition(f, g):
@@ -55,21 +57,3 @@ def compose_specs(f, g):
             kwarg_types(g_spec)
         )
 
-
-class Composable(object):
-    def __init__(self, f):
-        self.f = f
-        self.__name__ = f.__name__
-        self._patch_spec(self.f)
-
-    def __add__(self, g):
-        return Composable(compose(self.f, g))
-
-    def __call__(self, *args, **kwargs):
-        return self.f(*args, **kwargs)
-
-    def __repr__(self):
-        return ""
-
-    def _patch_spec(self, f):
-        self._spec = getattr(f, "_spec", None)
