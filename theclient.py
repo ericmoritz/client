@@ -3,15 +3,13 @@ from client.content_types import json
 from client.template import template
 from client.spec import autodoc
 from client.debug import trace
-from client.compose import compose_all
+from client.compose import compose_all, compose
 from pprint import pprint
 
+get_json = compose_all(json, content, get(), trace("url:"))
 
 get_page = autodoc(
-    compose_all(
-        json, content, get(), trace("url:"),
-        template("http://httpbin.org/get{?slug,page}", required=("slug", ))
-   ),
+    compose(get_json, template("http://httpbin.org/get{?slug,page}", required=("slug", ))),
     name="get_page",
     doc="Returns a simulated restful call"
 )
