@@ -9,6 +9,12 @@ Example
 
 
 ```python 
+from client.http.requests_client import get, content
+from client.content_types import json
+from client.template import template
+from client.spec import autodoc
+from client.debug import trace
+from client.compose import compose_all, compose
 
 get_json = compose_all(json, content, get(), trace("url:"))
 
