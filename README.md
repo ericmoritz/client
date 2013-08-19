@@ -17,5 +17,4 @@ get_page = autodoc(
     name="get_page",
     doc="Returns a simulated restful call"
 )
-
 ```
